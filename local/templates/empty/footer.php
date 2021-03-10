@@ -105,44 +105,46 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <!-- JS here -->
 
 <!-- All JS Custom Plugins Link Here here -->
-<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/modernizr-3.5.0.min.js')?>
+
 <!-- Jquery, Popper, Bootstrap -->
-<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery-1.12.4.min.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/popper.min.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/bootstrap.min.js')?>
 <!-- Jquery Mobile Menu -->
-<script src="./assets/js/jquery.slicknav.min.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.slicknav.min.js')?>
 
 <!-- Jquery Slick , Owl-Carousel Plugins -->
-<script src="./assets/js/owl.carousel.min.js"></script>
-<script src="./assets/js/slick.min.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/owl.carousel.min.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/slick.min.js')?>
+
 <!-- Date Picker -->
-<script src="./assets/js/gijgo.min.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/gijgo.min.js')?>
+
 <!-- One Page, Animated-HeadLin -->
-<script src="./assets/js/wow.min.js"></script>
-<script src="./assets/js/animated.headline.js"></script>
-<script src="./assets/js/jquery.magnific-popup.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/wow.min.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/animated.headline.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.magnific-popup.js')?>
 
 <!-- Breaking New Pluging -->
-<script src="./assets/js/jquery.ticker.js"></script>
-<script src="./assets/js/site.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.ticker.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/site.js')?>
 
 <!-- Scrollup, nice-select, sticky -->
-<script src="./assets/js/jquery.scrollUp.min.js"></script>
-<script src="./assets/js/jquery.nice-select.min.js"></script>
-<script src="./assets/js/jquery.sticky.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.scrollUp.min.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.nice-select.min.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.sticky.js')?>
 
 <!-- contact js -->
-<script src="./assets/js/contact.js"></script>
-<script src="./assets/js/jquery.form.js"></script>
-<script src="./assets/js/jquery.validate.min.js"></script>
-<script src="./assets/js/mail-script.js"></script>
-<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/contact.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.form.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.validate.min.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/mail-script.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.ajaxchimp.min.js')?>
 
 <!-- Jquery Plugins, main Jquery -->
-<script src="./assets/js/plugins.js"></script>
-<script src="./assets/js/main.js"></script>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/plugins.js')?>
+<?=$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/main.js')?>
 
 </body>
-
 </html>
