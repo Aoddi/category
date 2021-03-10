@@ -14,7 +14,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						<div class="single-footer-caption">
 							<!-- logo -->
 							<div class="footer-logo">
-								<a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+								<a href="index.html"><img src="<?=SITE_TEMPLATE_PATH?>/img/logo/logo2_footer.png" alt=""></a>
 							</div>
 							<div class="footer-tittle">
 								<div class="footer-pera">
@@ -57,12 +57,12 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						</div>
 						<div class="instagram-gellay">
 							<ul class="insta-feed">
-								<li><a href="#"><img src="assets/img/post/instra1.jpg" alt=""></a></li>
-								<li><a href="#"><img src="assets/img/post/instra2.jpg" alt=""></a></li>
-								<li><a href="#"><img src="assets/img/post/instra3.jpg" alt=""></a></li>
-								<li><a href="#"><img src="assets/img/post/instra4.jpg" alt=""></a></li>
-								<li><a href="#"><img src="assets/img/post/instra5.jpg" alt=""></a></li>
-								<li><a href="#"><img src="assets/img/post/instra6.jpg" alt=""></a></li>
+								<li><a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/post/instra1.jpg" alt=""></a></li>
+								<li><a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/post/instra2.jpg" alt=""></a></li>
+								<li><a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/post/instra3.jpg" alt=""></a></li>
+								<li><a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/post/instra4.jpg" alt=""></a></li>
+								<li><a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/post/instra5.jpg" alt=""></a></li>
+								<li><a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/post/instra6.jpg" alt=""></a></li>
 							</ul>
 						</div>
 					</div>

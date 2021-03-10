@@ -1,6 +1,8 @@
 <?
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
+
+	$mainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -52,8 +54,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="header-info-left">
                                     <ul>     
-                                        <li><img src="assets/img/icon/header_icon1.png" alt="">34ºc, Sunny </li>
-                                        <li><img src="assets/img/icon/header_icon1.png" alt="">Tuesday, 18th June, 2019</li>
+                                        <li><img src="<?=SITE_TEMPLATE_PATH?>/img/icon/header_icon1.png" alt="">34ºc, Sunny </li>
+                                        <li><img src="<?=SITE_TEMPLATE_PATH?>/img/icon/header_icon1.png" alt="">Tuesday, 18th June, 2019</li>
                                     </ul>
                                 </div>
                                 <div class="header-info-right">
@@ -73,12 +75,18 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                             <!-- Logo -->
                             <div class="col-xl-3 col-lg-3 col-md-3">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+									<?if($mainPage):?>
+									<a href="#">
+									<?else:?>
+									<a href="/">
+									<?endif?>
+										<img src="<?=SITE_TEMPLATE_PATH?>/img/logo/logo.png" alt="">
+									</a>
                                 </div>
                             </div>
                             <div class="col-xl-9 col-lg-9 col-md-9">
                                 <div class="header-banner f-right ">
-                                    <img src="assets/img/hero/header_card.jpg" alt="">
+                                    <img src="<?=SITE_TEMPLATE_PATH?>/img/hero/header_card.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -90,14 +98,14 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                             <div class="col-xl-10 col-lg-10 col-md-12 header-flex">
                                 <!-- sticky -->
                                     <div class="sticky-logo">
-                                        <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                        <a href="index.html"><img src="<?=SITE_TEMPLATE_PATH?>/img/logo/logo.png" alt=""></a>
                                     </div>
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-md-block">
                                     <nav>                  
                                         <ul id="navigation">    
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="categori.html">Category</a></li>
+                                            <li><a href="category.html">Category</a></li>
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="latest_news.html">Latest News</a></li>
                                             <li><a href="contact.html">Contact</a></li>
