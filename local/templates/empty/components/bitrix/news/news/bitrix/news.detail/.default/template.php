@@ -12,6 +12,22 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="trending-tittle">
+			<strong>Trending now</strong>
+			<!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+			<div class="trending-animated">
+				<ul id="js-news" class="js-hidden">
+					<li class="news-item">Bangladesh dolor sit amet, consectetur adipisicing elit.</li>
+					<li class="news-item">Spondon IT sit amet, consectetur.......</li>
+					<li class="news-item">Rem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
 <div class="col-lg-8">
 	<div class="about-right mb-90">
 		<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
