@@ -6,6 +6,12 @@ $APPLICATION->SetTitle("Главная");
 <section class="whats-news-area pt-50 pb-20">
 	<div class="container">
 		<div class="row">
+		<!-- проверка гет параметра -->
+		<?php 
+		if(isset($_GET['IBLOCK_SECTION_ID'])) {
+			$GLOBALS['arrFilter'] = ["IBLOCK_SECTION_ID" => (int)$_GET['IBLOCK_SECTION_ID']];
+		}
+		?> 
 			<?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news", 
@@ -24,7 +30,7 @@ $APPLICATION->SetTitle("Главная");
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"COMPONENT_TEMPLATE" => "news",
-		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_FIELD_CODE" => array(
@@ -49,11 +55,10 @@ $APPLICATION->SetTitle("Главная");
 		"IBLOCK_ID" => "2",
 		"IBLOCK_TYPE" => "news",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"LIST_ACTIVE_DATE_FORMAT" => "",
 		"LIST_FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "PREVIEW_PICTURE",
-			2 => "",
+			0 => "",
+			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
 			0 => "",
@@ -76,9 +81,9 @@ $APPLICATION->SetTitle("Главная");
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
+		"SORT_BY1" => "ID",
+		"SORT_BY2" => "ID",
+		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
@@ -88,7 +93,7 @@ $APPLICATION->SetTitle("Главная");
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
-		"FILTER_NAME" => "",
+		"FILTER_NAME" => "arrFilter",
 		"FILTER_FIELD_CODE" => array(
 			0 => "",
 			1 => "",

@@ -13,10 +13,33 @@
 $this->setFrameMode(true);
 ?>
 
+<!-- интегрировать блок фильтрации -->
 <?if($arParams["DISPLAY_TOP_PAGER"]):?>
 <?= $arResult["NAV_STRING"] ?><br />
 <?endif;?>
 <div class="col-lg-8">
+	<div class="row d-flex justify-content-between">
+		<div class="col-lg-3 col-md-3">
+			<div class="section-tittle mb-30">
+				<h3>Whats New</h3>
+			</div>
+		</div>
+		<div class="col-lg-9 col-md-9">
+			<div class="properties__button">
+				<!--Nav Button  -->
+				<nav>
+					<div class="nav nav-tabs" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" href="?ALL" role="tab" aria-controls="nav-home" aria-selected="true">All</a>
+
+						<?foreach($arResult['ALL_SECTIONS'] as $item):?>
+							<a class="nav-item nav-link" id="nav-profile-tab" href="?IBLOCK_SECTION_ID=<?=$item['ID']?>" role="tab" aria-controls="nav-profile" aria-selected="false"><?=$item['NAME']?></a>
+						<?endforeach?>
+					</div>
+				</nav>
+				<!--End Nav Button  -->
+			</div>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-12">
 			<!-- Nav Card -->
@@ -26,9 +49,9 @@ $this->setFrameMode(true);
 					<div class="whats-news-caption">
 						<div class="row">
 							<?foreach($arResult["ITEMS"] as $arItem):?>
-							<?//var_dump($arItem)?>
 							<?$res = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID'])?>
 							<?if ($ar_res = $res->GetNext()):?>
+							<?//var_dump($ar_res)?>
 							<?$sectionName = $ar_res['NAME']?>
 							<?endif?>
 							<div class="col-lg-6 col-md-6">

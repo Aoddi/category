@@ -75,11 +75,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                             <!-- Logo -->
                             <div class="col-xl-3 col-lg-3 col-md-3">
                                 <div class="logo">
-									<?if($mainPage):?>
-									<a href="#">
-									<?else:?>
-									<a href="/">
-									<?endif?>
+                                    <a href="/">
 										<img src="<?=SITE_TEMPLATE_PATH?>/img/logo/logo.png" alt="">
 									</a>
                                 </div>
