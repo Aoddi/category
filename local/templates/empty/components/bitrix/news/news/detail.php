@@ -68,3 +68,12 @@ $this->setFrameMode(true);
 	),
 	$component
 );?>
+
+<?
+$APPLICATION->IncludeComponent(
+	"dv:comments",
+	"",
+	[
+		"ELEMENT_ID" => $arResult['VARIABLES']['ELEMENT_ID'],
+	]
+);?>

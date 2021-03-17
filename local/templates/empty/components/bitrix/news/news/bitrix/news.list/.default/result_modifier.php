@@ -7,8 +7,3 @@ while ($ar_Section = $rs_Section->Fetch())
         'NAME' => $ar_Section['NAME']
     ];
 }
-
-// echo '<pre>';
-// var_dump($arResult);
-// echo '</pre>';
-// используя ciblocksection::getlist получить все разделы этого инфоблока. Результат нужно сохранить в $arRusult['ALL_SECTION']. 

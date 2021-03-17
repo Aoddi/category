@@ -150,6 +150,4 @@ $this->setFrameMode(true);
 			?>
 	</noindex>
 </div>
-<?
-	}
-	?>
+<?}?>
