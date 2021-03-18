@@ -42,13 +42,15 @@ class CComments extends CBitrixComponent
 
         $IBLOCK_ID = $this->getCharacterCode("Comments");
         $NEWS = $this->getCharacterCodeProperties($IBLOCK_ID, "NEWS");
+        $ID = $this->getCharacterCodeProperties($IBLOCK_ID, "ID");
 
         $PROP = [];
         $PROP[$NEWS] = $this->arParams['ELEMENT_ID'];
+        $PROP[$ID] = CUser::GetID();
 
         $arLoadProductArray = [
             "IBLOCK_ID" => $IBLOCK_ID,
-            "NAME" => CUser::GetID(),
+            "NAME" => CUser::GetLogin(),
             "PREVIEW_TEXT" => htmlspecialchars($_POST['subject']),
             "DETAIL_TEXT" => htmlspecialchars($_POST['message']),
             "PROPERTY_VALUES" => $PROP,
