@@ -2,11 +2,9 @@
 
 <?if($USER->IsAuthorized()):?>
 <form action="" name="form-comments" method="POST">
-      <input type="hidden" name="user-login" value="<?= $USER->GetLogin() ?>">
-      <input type="hidden" name="user-email" value="<?= $USER->GetEmail() ?>">
-      <textarea name="message" placeholder="Enter Message"></textarea>
-      <input type="text" name="subject" placeholder="Enter Subject">
+      <textarea name="message" placeholder="Enter Message" required></textarea>
+      <input type="text" name="subject" placeholder="Enter Subject" required>
 
-      <button type="submit">SEND</button>
+      <button type="submit" name="send">SEND</button>
 </form>
 <?endif?>
