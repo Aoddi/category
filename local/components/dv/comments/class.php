@@ -34,22 +34,22 @@ class CComments extends CBitrixComponent
     }
 
     /**
-     * Функция для создания и добавления елемента в инфоблок
+     * Функция для создания и добавления элемента в инфоблок
+     * @param int $id инфоблока
      */
-    public function createElement()
+    public function createElement(int $id)
     {
         $el = new CIBlockElement;
 
-        $IBLOCK_ID = $this->getCharacterCode("Comments");
-        $NEWS = $this->getCharacterCodeProperties($IBLOCK_ID, "NEWS");
-        $ID = $this->getCharacterCodeProperties($IBLOCK_ID, "ID");
+        $NEWS = $this->getCharacterCodeProperties($id, "NEWS");
+        $ID_PROPERTY = $this->getCharacterCodeProperties($id, "ID");
 
         $PROP = [];
         $PROP[$NEWS] = $this->arParams['ELEMENT_ID'];
-        $PROP[$ID] = CUser::GetID();
+        $PROP[$ID_PROPERTY] = CUser::GetID();
 
         $arLoadProductArray = [
-            "IBLOCK_ID" => $IBLOCK_ID,
+            "IBLOCK_ID" => $id,
             "NAME" => CUser::GetLogin(),
             "PREVIEW_TEXT" => htmlspecialchars($_POST['subject']),
             "DETAIL_TEXT" => htmlspecialchars($_POST['message']),
@@ -61,13 +61,37 @@ class CComments extends CBitrixComponent
     }
 
     /**
+     * Функция для получения всех элементов ИБ Comments
+     * * @param int $id инфоблока
+     */
+    public function getElement(int $id)
+    {
+        $arSelect = ["ID", "IBLOCK_ID", "NAME", "PREVIEW_TEXT", "DETAIL_TEXT"];
+        $arFilter = [
+            "IBLOCK_ID"=>$id,
+            "PROPERTY_NEWS" => $this->arParams["ELEMENT_ID"],
+            "ACTIVE_DATE"=>"Y",
+            "ACTIVE"=>"Y"
+        ];
+        $res = CIBlockElement::GetList([], $arFilter, false, ["nPageSize"=>50], $arSelect);
+            while($ob = $res->GetNextElement()){ 
+            $arFields = $ob->GetFields(); 
+            $this->arResult[] = $arFields;
+        }
+    }
+
+    /**
      * Функция для поключения шаблона
      */
     public function executeComponent()
     {
+        $IBLOCK_ID = $this->getCharacterCode("Comments");
+
         if(isset($_POST['send'])) {
-            $this->createElement();
+            $this->createElement($IBLOCK_ID);
         }
+
+        $this->getElement($IBLOCK_ID);
         $this->includeComponentTemplate();
     }
 }
